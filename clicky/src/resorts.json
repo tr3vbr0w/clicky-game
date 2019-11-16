@@ -1,0 +1,30 @@
+{
+    "id": 1,
+    "name": "Brighton",
+    "image": "./assets/images/brighton.png"
+},
+{
+    "id": 2,
+    "name": "Alta",
+    "image": "./assets/images/alta.jpg"
+},
+{
+    "id": 3,
+    "name": "Snowbird",
+    "image": "./assets/images/snowbird.jpg"
+},
+{
+    "id": 4,
+    "name": "Solitude",
+    "image": "./assets/images/solitude.png"
+},
+{
+    "id": 5,
+    "name": "Snowbasin",
+    "image": "./assets/images/basin.jpg"
+},
+{
+    "id": 3,
+    "name": "PowderMountain",
+    "image": "./assets/images/powMow.jpg"
+},
