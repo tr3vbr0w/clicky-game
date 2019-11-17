@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import ResortCard from "./components/ResortCard";
 import resorts from "./resorts.json"
-import Wrapper from "./components/Wrapper";
-// import Card from "./components/Card";
-
+import Wrapper from "./components/Wrapper"
 class App extends Component {
   state = {
     resorts,
@@ -23,9 +20,9 @@ class App extends Component {
 
   render() {
     return (
-      
+      <>
+      <Jumbotron>Resorts List</Jumbotron>
       <Wrapper>
-        <Jumbotron>Resorts List</Jumbotron>
         {this.state.resorts.map(resort => (
           <ResortCard
             removeResort={this.removeResort}
@@ -37,6 +34,7 @@ class App extends Component {
           />
         ))}
       </Wrapper>
+      </>
     );
   }
 };

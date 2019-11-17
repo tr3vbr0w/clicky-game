@@ -28,5 +28,30 @@
         "id": 6,
         "name": "PowderMountain",
         "image": "./assets/images/powMow.png"
+    },
+    {
+        "id": 7,
+        "name": "Beaver Mountain",
+        "image": "./assets/images/beaver.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Brian Head",
+        "image": "./assets/images/brianHead.png"
+    },
+    {
+        "id": 9,
+        "name": "Deer Valley",
+        "image": "./assets/images/deerValley.png"
+    },
+    {
+        "id": 10,
+        "name": "Eagle Point",
+        "image": "./assets/images/eagle point.png"
+    },
+    {
+        "id": 11,
+        "name": "Park City",
+        "image": "./assets/images/pcmr.jpg"
     }
 ]
