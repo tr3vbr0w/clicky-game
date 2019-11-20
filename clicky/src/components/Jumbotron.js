@@ -1,13 +1,13 @@
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
 
-const Jumbo = (props) => {
+const Jumbo = () => {
   return (
     <div>
       <Jumbotron fluid>
         <Container fluid>
-          <h1 className="display-3">Fluid jumbotron</h1>
-          <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <h1 className="display-3">Click Game</h1>
+          <span className="lead">Board shuffles once you click a resort. Dont click the same image twice.</span>  <span>Consecutive Clicks: </span> <span>High Score: </span>
         </Container>
       </Jumbotron>
     </div>
