@@ -42,7 +42,9 @@ class App extends Component {
 
   gameOver = () => {
     let shuffledResorts = shuffleResorts(resorts);
+    let newHighScore = (this.state.score > this.state.highScore) ? this.state.score : this.state.highScore;
     this.setState({
+      highScore: newHighScore,
       score: 0,
       resorts: shuffledResorts,
       clickedResorts: []
