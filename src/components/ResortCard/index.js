@@ -1,14 +1,6 @@
 import React from "react";
 import "./style.css";
 
-// const = resortOnClick  event => {
-//   const resortId = event.target.id;
-//   console.log(resortId);
-  
-  
-  
-// }
-
 
 function ResortCard(props) {
   return (

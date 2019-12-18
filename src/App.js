@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Jumbotron from "./components/Jumbotron";
+import Jumbo from "./components/Jumbotron";
 import ResortCard from "./components/ResortCard";
 import resorts from "./resorts.json"
 import Wrapper from "./components/Wrapper"
 
 //Seperate to be global. Available to all components
 
-function shuffleResorts(arr) {
+let shuffleResorts = (arr) => {
   for (let i = arr.length -1; i > 0; i--) {
     // Randomized placement of array components effectively mixes them all up each time this function is called
     let j = Math.floor(Math.random() * (i + 1));
@@ -19,6 +19,7 @@ class App extends Component {
   state = {
     resorts,
     score: 0,
+    highScore: 0,
     isClicked: false,
     clickedResorts : []
   };
@@ -28,7 +29,8 @@ class App extends Component {
     this.setState({
       score: newScore
     })
-    
+    console.log("Score: "+this.state.score)
+    console.log("High Score: "+this.state.highScore)
   }
   //Shuffle Card Handler
   handleShuffle = () => {
@@ -39,66 +41,38 @@ class App extends Component {
   }
 
   gameOver = () => {
+    let shuffledResorts = shuffleResorts(resorts);
     this.setState({
       score: 0,
-      resorts: this.shuffleResorts(resorts),
+      resorts: shuffledResorts,
       clickedResorts: []
     })
+  
   }
 
 
   //Click handler for selecting a resort logo.
   handleClick = id => {
-    console.log(id);
     if(this.state.clickedResorts.indexOf(id) === -1) {
       this.setState({
         //.concat will push the index passed through onClick into the clickedResorts array
         clickedResorts : this.state.clickedResorts.concat(id),
 
       })
-      this.handleShuffle(resorts)
+      this.handleScoreIncrement();
+      this.handleShuffle(resorts);
     } else {
       this.gameOver()
-
     }
-    
-    //Increment the score
-    const newScore = this.state.score + 1;
-    this.setState({
-      score: newScore
-    });
 
-    // const resortId = event.target.id;
-    // console.log(resortId);
-    
   }
 
-  
-
-
-
-  //Fischer/Yates shuffle algorithm. Found on Medium
-  // shuffle = array => {
-  //   let currentIndex = array.length;
-
-  //   while (0 !== currentIndex) {
-  //     let randomIndex = Math.floor(Math.random() * currentIndex);
-  //     currentIndex -= 1;
-
-  //     let tempValue = array[currentIndex];
-  //     array[currentIndex] = array[randomIndex];
-  //     array[randomIndex] = tempValue;
-  //   }
-  //   // set characters to shuffled resorts array
-
-  //   this.setState({ resorts: resorts });
-  // };
 
   render() {
     return (
       <>
       {/* Rendering components in the app.js file */}
-      <Jumbotron>Resorts List</Jumbotron>
+      <Jumbo score={this.state.score} highScore={this.state.highScore}>Resorts List</Jumbo>
       <Wrapper>
         {this.state.resorts.map(resort => (
           <ResortCard

@@ -2,12 +2,15 @@
     {
         "id": 1,
         "name": "Brighton",
-        "image": "./assets/images/brighton.png"
+        "image": "./assets/images/brighton.png",
+        "isClicked": false
     },
     {
         "id": 2,
         "name": "Alta",
-        "image": "./assets/images/alta.jpg"
+        "image": "./assets/images/alta.jpg",
+        "isClicked": false
+
     },
     {
         "id": 3,
