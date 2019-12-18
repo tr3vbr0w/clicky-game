@@ -1,11 +1,8 @@
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
 
-let score;
 
-let highScore;
-
-const Jumbo = () => {
+const Jumbo = ({score, highScore, message}) => {
   return (
     <div>
       <Jumbotron fluid>
@@ -14,6 +11,7 @@ const Jumbo = () => {
           <p className="lead">Board shuffles once you click a resort. Dont click the same image twice.</p>  
           <p>Consecutive Clicks: {score}</p> 
           <p>High Score: {highScore} </p>
+          <p>{message} </p>
         </Container>
       </Jumbotron>
     </div>

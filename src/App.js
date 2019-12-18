@@ -19,7 +19,7 @@ class App extends Component {
   state = {
     resorts,
     score: 0,
-    highScore: 0,
+    highScore: 0, 
     isClicked: false,
     clickedResorts : []
   };
@@ -61,6 +61,7 @@ class App extends Component {
       })
       this.handleScoreIncrement();
       this.handleShuffle(resorts);
+      console.log(this.state.clickedResorts)
     } else {
       this.gameOver()
     }
