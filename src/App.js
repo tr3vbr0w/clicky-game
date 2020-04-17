@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbo from "./components/Jumbotron";
-import ResortCard from "./components/ResortCard";
+import Nav from "./components/NavBar/NavBar";
+import ResortCard from "./components/ResortCard/ResortCard";
 import resorts from "./resorts.json"
 import Wrapper from "./components/Wrapper"
 
@@ -75,7 +76,8 @@ class App extends Component {
     return (
       <>
       {/* Rendering components in the app.js file */}
-      <Jumbo score={this.state.score} highScore={this.state.highScore}>Resorts List</Jumbo>
+      <Nav score={this.state.score} highScore={this.state.highScore}></Nav>
+      {/* <Jumbo score={this.state.score} highScore={this.state.highScore}>Resorts List</Jumbo> */}
       <Wrapper>
         {this.state.resorts.map(resort => (
           <ResortCard
